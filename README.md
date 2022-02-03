@@ -1,3 +1,5 @@
+[![Build and deploy Node.js app to Azure Web App - pokemon-web](https://github.com/e-stylzz/Pokemon-Web/actions/workflows/main_pokemon-web.yml/badge.svg?branch=main)](https://github.com/e-stylzz/Pokemon-Web/actions/workflows/main_pokemon-web.yml)
+
 # PokemonWeb
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.

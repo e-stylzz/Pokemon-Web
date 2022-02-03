@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //api: 'http://localhost:5095/',
-  api: 'https://pokemon-api.azurewebsites.net/',
+  api: 'http://localhost:5095/',
+  //api: 'https://pokemon-api.azurewebsites.net/',
 };
 
 /*

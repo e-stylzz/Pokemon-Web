@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { BattleService } from 'src/app/battle/battle.service';
 import { Card } from '../card';
 import { CardService } from '../card.service';
 
@@ -11,12 +13,15 @@ import { CardService } from '../card.service';
 export class SetComponent implements OnInit {
   setId: any;
   Cards: Card[] = [];
+  isBattleMode!: Observable<boolean>;
 
-  constructor(private route: ActivatedRoute, public cardService: CardService) {}
+  constructor(private route: ActivatedRoute, public cardService: CardService, public battleService : BattleService) {}
 
   ngOnInit(): void {
     this.setId = this.route.snapshot.paramMap.get('id');
     this.getCards();
+    this.isBattleMode = this.battleService.isBattleMode;
+    console.log('Is Battle Mode (Set)?', this.isBattleMode)
   }
 
   getCards() {
@@ -36,4 +41,5 @@ export class SetComponent implements OnInit {
       }
     });
   }
+
 }

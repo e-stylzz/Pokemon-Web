@@ -12,8 +12,16 @@
       <li>
         <a routerLink="/pokemon" routerLinkActive="active">Pokemon</a>
       </li>
-      <li><a routerLink="/battle" routerLinkActive="active">Battle</a></li>
+      <li *ngIf="isBattleMode | async"><a routerLink="/battle" routerLinkActive="active">Battle</a></li>
     </ul>
+
+    <span class="spacer"></span>
+
+    <!-- <mat-slide-toggle (change)="toggleBattleMode($event.checked)">Battle Mode</mat-slide-toggle> -->
+    <mat-slide-toggle [checked]="isBattleMode | async" (change)="toggleBattleMode($event.checked)" class="toggle"
+			>Battle Mode</mat-slide-toggle
+		>
+
   </mat-toolbar-row>
 </mat-toolbar>
 

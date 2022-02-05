@@ -1,7 +1,9 @@
 <div class="container">
   <div
+    class="card"
     *ngFor="let card of Cards"
-    (click)="this.cardService.addCardtoBattle(card)"
+    (click)="this.addCard(card)"
+    [ngClass]="card.clicked ? 'selected' : ''"
   >
     <img src="{{ card.imageSmall }}" alt="card.name" />
     <!-- <a href="{{ card.imageLarge }}" target="_blank"

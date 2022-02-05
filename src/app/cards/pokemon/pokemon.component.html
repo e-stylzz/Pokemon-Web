@@ -1,7 +1,10 @@
 <div class="container">
-  <div *ngFor="let card of Cards">
-    <a href="{{ card.imageLarge }}" target="_blank"
-      ><img src="{{ card.imageSmall }}" alt="card.name"
-    /></a>
+  <div
+    class="card"
+    *ngFor="let card of Cards"
+    (click)="this.addCard(card)"
+    [ngClass]="card.clicked ? 'selected' : ''"
+  >
+    <img src="{{ card.imageSmall }}" alt="card.name" />
   </div>
 </div>

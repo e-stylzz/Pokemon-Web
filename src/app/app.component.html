@@ -4,14 +4,19 @@
 
     <ul class="topnav">
       <li>
+        <a routerLink="/" routerLinkActive="active">Home</a>
+      </li>
+      <li>
         <a routerLink="/sets" routerLinkActive="active">Sets</a>
       </li>
-      <li><a routerLink="/battle" routerLinkActive="active">Battle</a></li>
       <li>
         <a routerLink="/pokemon" routerLinkActive="active">Pokemon</a>
       </li>
+      <li><a routerLink="/battle" routerLinkActive="active">Battle</a></li>
     </ul>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

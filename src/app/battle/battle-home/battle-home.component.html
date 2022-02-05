@@ -1,0 +1,25 @@
+<div *ngIf="Cards.length">
+  <div class="container">
+    <div class="card">
+      <img src="{{ Cards[0].imageSmall }}" />
+    </div>
+    <h1>Vs.</h1>
+    <div class="card">
+      <img src="{{ Cards[1].imageSmall }}" />
+    </div>
+  </div>
+
+  <div class="messages">
+    <p *ngFor="let message of Messages">
+      {{ message }}
+    </p>
+  </div>
+
+  <button (click)="startBattle()" *ngIf="beginVisible">Begin</button>
+  <button (click)="newMatch()" *ngIf="newVisible">New Match</button>
+</div>
+
+<div class="container" *ngIf="!Cards?.length">
+  No cards have been chosen for battle.
+  <a href="/">Click Here</a>
+</div>

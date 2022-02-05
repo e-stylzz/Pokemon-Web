@@ -1,7 +1,11 @@
 <div class="container">
-  <div *ngFor="let card of Cards">
-    <a href="{{ card.imageLarge }}" target="_blank"
+  <div
+    *ngFor="let card of Cards"
+    (click)="this.cardService.addCardtoBattle(card)"
+  >
+    <img src="{{ card.imageSmall }}" alt="card.name" />
+    <!-- <a href="{{ card.imageLarge }}" target="_blank"
       ><img src="{{ card.imageSmall }}" alt="card.name"
-    /></a>
+    /></a> -->
   </div>
 </div>

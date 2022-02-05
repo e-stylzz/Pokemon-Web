@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Card } from './card';
+import { CardsModule } from './cards.module';
 
 @Injectable({
   providedIn: 'root',
@@ -10,11 +12,18 @@ import { Card } from './card';
 export class CardService {
   url = `${environment.api}cards`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   getCards(): Observable<Card[]> {
     return this.http
       .get<[]>(this.url)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  getCard(id: string): Observable<Card> {
+    const url = `${this.url}/${id}`;
+    return this.http
+      .get<Card>(url)
       .pipe(retry(2), catchError(this.handleError));
   }
 
@@ -33,5 +42,23 @@ export class CardService {
   private handleError(error: any) {
     console.log('Full Error: ', error);
     return throwError(error);
+  }
+
+  battleSet: Card[] = [];
+
+  addCardtoBattle(card: Card) {
+    this.battleSet.push(card);
+    console.log('Cards', this.battleSet.length);
+    if (this.battleSet.length == 2) {
+      this.router.navigate(['battle']);
+    }
+  }
+
+  clearBattle() {
+    this.battleSet = [];
+  }
+
+  getBattle() {
+    return this.battleSet;
   }
 }

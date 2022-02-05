@@ -63,7 +63,7 @@ export class BattleHomeComponent implements OnInit {
     console.log('Active Player: ', this.ActivePlayer);
     this.Cards[this.ActivePlayer].hp =
       this.Cards[this.ActivePlayer].hp -
-      this.Cards[this.PreviousPlayer].attacks[0].damage;
+      this.Cards[this.PreviousPlayer].attacks[randomAttack].damage;
     //console.log('Player 0 HP = ', this.Cards[0].hp);
     //console.log('Player 1 HP = ', this.Cards[1].hp);
   }

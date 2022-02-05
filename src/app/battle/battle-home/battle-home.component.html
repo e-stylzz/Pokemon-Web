@@ -7,6 +7,20 @@
     <div class="card">
       <img src="{{ Cards[1].imageSmall }}" />
     </div>
+    <span class="spacer"></span>  
+    <div *ngIf="showDebug" class="debug">
+      <p>
+        Name: {{Cards[0].name }}<br>
+        Set: {{Cards[0].id }}<br>
+        Attacks: {{Cards[0].attacks.length}}
+      </p>
+      <p>
+        Name: {{Cards[1].name }}<br>
+        Set: {{Cards[1].id }}<br>
+        Attacks: {{Cards[1].attacks.length}}
+      </p>
+    </div>
+    <mat-icon aria-hidden="false" aria-label="Debug" (click)="toggleDebug()">help</mat-icon> 
   </div>
 
   <div class="messages">
@@ -23,3 +37,6 @@
   No cards have been chosen for battle.
   <a href="/">Click Here</a>
 </div>
+
+
+

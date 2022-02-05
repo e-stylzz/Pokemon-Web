@@ -15,6 +15,7 @@ export class BattleHomeComponent implements OnInit {
   Messages: any = [];
   beginVisible = true;
   newVisible = false;
+  showDebug = false;
 
   constructor(public cardService: CardService, private router: Router) {}
 
@@ -38,6 +39,7 @@ export class BattleHomeComponent implements OnInit {
       this.Messages.push(`${this.Cards[0].name} is the winner!`);
     }
     this.newVisible = true;
+    this.cardService.clearBattle();
   }
 
   attack() {
@@ -87,5 +89,9 @@ export class BattleHomeComponent implements OnInit {
   newMatch() {
     this.cardService.clearBattle();
     this.router.navigate(['/']);
+  }
+
+  toggleDebug() {
+    this.showDebug = !this.showDebug;
   }
 }

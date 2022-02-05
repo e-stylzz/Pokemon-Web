@@ -8,7 +8,7 @@ export class BattleService {
 
   constructor() { }
 
-  private _battleMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private _battleMode: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 	isBattleMode = this._battleMode.asObservable();
 
 	setBattleMode(isBattleMode: boolean) {

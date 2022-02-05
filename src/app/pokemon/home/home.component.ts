@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
 import { Pokemon } from '../pokemon';
+import { PokemonSearchPipe } from '../../shared/pipes/pokemon-search.pipe';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import { Pokemon } from '../pokemon';
 })
 export class HomeComponent implements OnInit {
   Pokemon: any = [];
+  searchFilter = "";
 
   constructor(public pokemonService: PokemonService, private router: Router) {}
 

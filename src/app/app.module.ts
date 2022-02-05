@@ -14,6 +14,7 @@ import { MaterialModule } from './shared/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BattleModule } from './battle/battle.module';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -34,6 +35,7 @@ import { HomeComponent } from './home/home.component';
     MaterialModule,
     FlexLayoutModule,
     BattleModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

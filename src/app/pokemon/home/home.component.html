@@ -1,6 +1,15 @@
+<!-- <input type="search" [(ngModel)] = searchFilter > -->
+
+<mat-form-field class="search" appearance="fill">
+  <mat-icon matPrefix>search</mat-icon>
+  <input type="text" matInput [(ngModel)] = searchFilter >
+</mat-form-field>
+
+
+
 <div class="container">
   <div
-    *ngFor="let pokemon of Pokemon"
+    *ngFor="let pokemon of Pokemon | PokemonSearchPipe: searchFilter"
     class="pokemon"
     (click)="openPokemon(pokemon)"
   >

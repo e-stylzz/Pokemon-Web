@@ -5,15 +5,16 @@
     (click)="this.addCard(card)"
     [ngClass]="card.clicked ? 'selected' : ''"
   >
-    <img src="{{ card.imageSmall }}" alt="card.name" />
+    <img
+      src="{{ card.imageSmall }}"
+      alt="card.name"
+      *ngIf="card.supertype == 'Pokémon'"
+    />
   </div>
 </div>
 
-<div class="container" *ngIf="!(isBattleMode | async) ">
-  <div
-    class="card"
-    *ngFor="let card of Cards"
-  >
+<div class="container" *ngIf="!(isBattleMode | async)">
+  <div class="card" *ngFor="let card of Cards">
     <a href="{{ card.imageLarge }}" target="_blank"
       ><img src="{{ card.imageSmall }}" alt="card.name"
     /></a>

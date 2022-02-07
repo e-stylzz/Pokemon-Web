@@ -8,5 +8,10 @@ export interface Card {
   name: string;
   attacks: Array<Attack>;
   clicked?: boolean;
-  supertype?: string;
+  type: string;
+  supertype: string;
+  strength: string;
+  strengthValue: string;
+  weakness: string;
+  weaknessValue: string;
 }

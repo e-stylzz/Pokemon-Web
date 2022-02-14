@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
   pokemon() {
     this.router.navigate(['pokemon']);
   }
+
+  regions() {
+    this.router.navigate(['regions'])
+  }
 }

@@ -15,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BattleModule } from './battle/battle.module';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
+import { RegionsModule } from './regions/regions.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     FlexLayoutModule,
     BattleModule,
-    FormsModule
+    FormsModule,
+    RegionsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

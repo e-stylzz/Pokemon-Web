@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .pokemon {
+    border-radius: 25%;
+    border: 1px solid black;
+    background-color: yellow;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  IMG {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }

@@ -26,6 +26,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./battle/battle.module').then((m) => m.BattleModule),
   },
+  {
+    path: 'regions',
+    loadChildren: () =>
+      import('./regions/regions.module').then((m) => m.RegionsModule),
+  },
 ];
 
 @NgModule({
